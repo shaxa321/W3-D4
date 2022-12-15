@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>EX4W3</title>
+</head>
+<body>
+    <header>
+        <h1>Task List</h1>
+        <p>by Amonov Shahruz</p>
+        <p>W3 EX 4</p>
+    </header>
+    <main>
+        <section>
+            <div>
+            <h2>My to do list</h2>
+            <input type="text" id="inputTask" placeholder="Aggiungi qualcosa"> 
+            <span id="sendButton"> Add </span>
+            </div>
+            <ul>
+            </ul>
+        </section>
+
+
+
+        <script>
+
+            const tasks=[];
+
+            const inputTaskFunction=function(){
+                const inputTask=document.querySelector("#inputTask");
+                inputTask.addEventListener("keydown",function(e){
+                    if (e.keyCode==13){
+                        tasks.push(inputTask.value);
+                        insertElementinLi(inputTask.value);
+                        console.log(tasks);
+                        inputTask.value="";
+                    }
+                })
+                
+                
+          }
+            const sendButtonfFunction=function(){
+                const sendButton=document.querySelector("#sendButton");
+                sendButton.addEventListener("click",function(){
+                    console.log("Cliccato bottone invia");
+                    inputTask=document.querySelector("#inputTask");
+                    tasks.push(inputTask.value);
+                    console.log(tasks);
+                    insertElementinLi(inputTask.value);
+                    inputTask.value="";
+                    
+                })
+            }
+            const insertElementinLi=function(valoreinserito){
+                const li=document.createElement("li");
+                const text=document.createTextNode(valoreinserito);
+                const ul=document.querySelector("ul");
+                console.log(ul);
+                
+                li.appendChild(text);
+                ul.appendChild(li);
+                addDeleteButton(li);
+
+            }
+            
+            const addDeleteButton=function(linea){
+                const deleteButton=document.createElement("span");
+                const textDeleteButton=document.createTextNode("X");
+                deleteButton.appendChild(textDeleteButton);
+                deleteButton.style.margin="100px";
+                deleteButton.class="deleteClass";
+                linea.appendChild(deleteButton);
+            }
+            
+            
+            const deleteLine=function(){
+            }
+            
+            
+            inputTaskFunction();
+            sendButtonfFunction();
+            console.log(tasks);
+            
+        </script>
+    </main>
+    
+</body>
+</html>

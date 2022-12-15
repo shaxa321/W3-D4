@@ -1,0 +1,39 @@
+/*PROVA*/
+body{
+    background-color: antiquewhite;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+header{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    border-radius: 5%;
+    
+}
+header h1{
+    font-weight: normal;
+
+}
+header p{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 12px;
+    padding-left: 50px;
+}
+section{
+    background-color: rgba(255, 255, 255, 0.545);
+    color: blue;
+
+}
+span{
+    
+    background: #d9d9d9;
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0;
+}
+span:hover{
+    background-color: yellow;
+}
